@@ -1,0 +1,165 @@
+/* ──── 섹션 전체 ──── */
+.inside-wrapper {
+  position: relative;            /* 화살표 절대 위치 기준 */
+  padding: 120px 60px;
+  overflow: hidden;              /* 버튼 밖으로 넘침 방지 */
+  background: #fff;
+}
+
+.inside-title {
+  font-size: 2.6rem;
+  font-weight: 500;
+  margin-bottom: 60px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+}
+
+/* ──── 가로 스크롤 영역 ──── */
+.inside-scroll {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* 스냅 */
+  scroll-behavior: smooth;
+  padding-bottom: 20px;          /* 스크롤바와 살짝 간격 */
+}
+.inside-scroll::-webkit-scrollbar {
+  height: 8px;                   /* 가로 스크롤바 높이 */
+}
+.inside-scroll::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+/* ──── 카드 ──── */
+.inside-card {
+  flex: 0 0 280px;               /* 고정 폭 → 카드 한 칸씩 */
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.inside-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* 썸네일 */
+.inside-thumb {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 캡션 */
+.inside-caption {
+  padding: 18px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Georgia', serif;
+}
+.inside-caption h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #222;
+}
+.inside-caption p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #666;
+  margin: 0;
+}
+.arrow {
+  align-self: flex-end;
+  font-size: 1.2rem;
+  color: #999;
+  transition: color 0.3s ease;
+}
+.inside-card:hover .arrow {
+  color: #000;
+}
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.scroll-btn.left  { left: 10px; }
+.scroll-btn.right { right: 10px; }
+
+/* ──── 모바일 반응형 ──── */
+@media (max-width: 600px) {
+  .inside-wrapper {
+    padding: 80px 20px;
+  }
+  .inside-card {
+    flex: 0 0 240px;
+  }
+}
+/* 기존 카드, 스크롤 영역 스타일 그대로 두고, 아래만 추가 */
+
+.gallery-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.gallery-box {
+  position: relative;
+  max-width: 900px;
+  width: 90vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.gallery-img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 2.8rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.gallery-btn.prev { left: -50px; }
+.gallery-btn.next { right: -50px; }
+
+.gallery-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.gallery-caption {
+  text-align: center;
+  color: #fff;
+  font-family: 'Georgia', serif;
+}
+
+.gallery-caption h3 { margin-bottom: 6px; }

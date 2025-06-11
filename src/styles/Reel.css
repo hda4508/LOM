@@ -1,0 +1,137 @@
+.reel-detail {
+  padding: 60px 80px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.reel-header {
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.reel-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.circle-btn {
+  width: 24px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border: none;
+}
+
+.reel-body {
+  display: flex;
+  margin-top: 50px;
+  gap: 40px;
+}
+
+.reel-image img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.reel-info {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.7;
+  line-height: 30px;
+}
+
+.synopsis {
+  margin-top: 20px;
+  color: #444;
+  margin-top: 50px;
+}
+/* ───────── 모달 배경 ───────── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ───────── 모달 박스 ───────── */
+.modal-content {
+  width: 92%;
+  max-width: 880px;
+  height: 60%;
+  background: #fff;
+  border-radius: 32px;
+  padding: 48px 56px;
+  position: relative;
+  font-family: 'Georgia', serif;
+  overflow: hidden;           /* 내용 넘침 방지 */
+  display: flex;              /* 2단 배치 */
+  gap: 40px;
+}
+
+/* ───── 왼쪽 이미지 영역 ───── */
+.modal-img {
+  flex: 1.1;
+  min-width: 260px;
+}
+.modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ───── 오른쪽 정보 영역 ───── */
+.modal-info {
+  flex: 1.6;
+  overflow-y: auto;          /* 내용 길면 스크롤 */
+}
+.modal-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.modal-author {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+.modal-desc {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  white-space: pre-line;     /* 줄바꿈 유지 */
+}
+
+/* ───── 닫기 버튼 ───── */
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ───── 모바일 스택 레이아웃 ───── */
+@media (max-width: 700px) {
+  .modal-content {
+    flex-direction: column;
+    height: 80%;
+  }
+  .modal-img {
+    flex: none;
+    width: 100%;
+  }
+  .modal-img img {
+    border-radius: 16px;
+  }
+}
+.modal-date {
+  margin-top: 10px;
+}

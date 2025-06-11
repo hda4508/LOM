@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 10%;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: white;
+  color: black;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+/* ============ NAVIGATION ============ */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 90px;
+  font-size: 16px;
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Moirai One', cursive;
+}
+
+nav .menu a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+/* ============ HERO - LEFT SLOGAN ============ */
+.slogan {
+  margin: 80px 60px 40px auto;
+  font-size: 20px;
+  text-align: right;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero {
+  margin-top: 190px;
+  text-align: left;
+}
+
+.hero-text {
+  font-size: 50px;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+
+/* ============ SCROLL INDICATOR ============ */
+.scroll-indicator {
+  margin-bottom: 20px;
+  font-size: 24px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-top: 170px;
+}
+
+.footer-logo {
+  font-family: 'Moirai One', cursive;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.footer-slogan {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.footer-menu a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 32px;
+}
+
+/* ============ HOME HERO 전체 레이아웃 ============ */
+.home {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  height: 100vh;
+  padding: 30px 80px;
+  position: relative;
+  margin-top: -50px;
+  
+}
+
+/* 왼쪽 */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 190px;
+}
+
+.hero-headline {
+  font-size: 120px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-headline .accent {
+  font-style: italic;
+  color: #b10909;
+}
+
+/* 스크롤 인디케이터 + ↓ */
+.scroll-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.scroll-arrow {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  user-select: none;
+}
+
+/* 오른쪽 */
+.hero-right {
+  position: relative;        /* ⬅️ 자식 absolute 기준 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-align: right;
+  font-family: 'Times New Roman', Times, serif;
+}
+.year {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 3.5rem;
+  margin-top: -650px;
+  margin-right: 10px;
+}
+
+
+.intro-box {
+  position: absolute;
+  max-width: 260px;
+  text-align: left;
+  margin-top: -190px;
+  margin-right: 50px;
+}
+
+.intro-box h2 {
+  font-size: 30px;
+  margin-bottom: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+}
+
+.intro-box p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* ============ 반응형 ============ */
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+  }
+
+  .hero-right {
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+
+  .year {
+    margin-bottom: 60px;
+  }
+}

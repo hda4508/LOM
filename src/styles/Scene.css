@@ -1,0 +1,109 @@
+/* src/styles/Scene.css */
+
+.scene-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 60px;
+}
+
+.quote-card {
+  padding: 40px;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  height: 300px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+/* 배경 위에 어두운 오버레이 */
+.quote-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 24px;
+  z-index: 0;
+}
+
+/* 모든 자식 요소는 위로 올리기 */
+.quote-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.quote-source {
+  font-size: 0.95rem;
+  text-align: center;
+  opacity: 1;
+  font-weight: bold;
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+
+.quote-like {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 1.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  color: white;
+}
+.gallery-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-image-wrapper {
+  position: relative;
+  width: 800px;         /* 고정 가로 너비 */
+  height: 500px;        /* 고정 세로 높이 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gallery-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* 비율 채우기 */
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+
+.gallery-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

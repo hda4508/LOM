@@ -1,0 +1,194 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 90px 60px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* Firefox */
+  
+}
+
+.card-container {
+  scroll-padding-inline: 60px;
+}
+.card-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.book-card {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 450px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.book-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+  overflow: hidden;
+}
+
+.book-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #bbb;
+}
+
+
+.book-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+}
+
+.book-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* 이미 사용 중인 카드 스타일은 그대로 두고, 아래만 추가 */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 100%;
+  height: 80%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 36px;
+  padding: 48px 56px;
+  position: relative;
+  font-family: 'Georgia', serif;
+  text-align: left;
+}
+
+.modal-content img {
+  width: 40%;
+  border-radius: 24px;
+  margin-bottom: 32px;
+}
+
+.modal-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.modal-author {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.modal-desc {
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+/* 2단 모달 레이아웃 */
+.modal-content {
+  width: 92%;
+  height: 60%;
+  max-width: 880px;
+  background: #fff;
+  border-radius: 32px;
+  padding: 48px 56px;
+  position: relative;
+  font-family: 'Georgia', serif;
+}
+
+.modal-body {
+  display: flex;
+  gap: 40px;
+}
+
+.modal-img img {
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.modal-info {
+  flex: 1;
+  max-height: 70vh;        /* 긴 설명 스크롤 */
+  overflow-y: auto;
+}
+
+.modal-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.modal-author {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.modal-desc {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  white-space: pre-line;    /* 줄바꿈 유지 */
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 모바일 스택 레이아웃 */
+@media (max-width: 700px) {
+  .modal-body {
+    flex-direction: column;
+  }
+  .modal-img img {
+    width: 100%;
+    border-radius: 16px;
+  }
+}

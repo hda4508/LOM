@@ -1,0 +1,31 @@
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.footer-logo {
+  font-family: 'Moirai One', cursive;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.footer-slogan {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.footer-copy {
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 32px;
+  text-align: left;
+  margin-left: 30px;
+}

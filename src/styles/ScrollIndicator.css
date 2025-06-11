@@ -1,0 +1,42 @@
+.scroll-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  justify-content: flex-start;
+  margin-top: -200px;
+}
+
+.dot-group {
+  display: flex;
+  background-color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  gap: 6px;
+  height: 60px;
+  overflow: hidden;
+  width: 150px;
+  border: 2px solid #000;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+  transition: transform 0.3s linear, opacity 0.5s linear;
+  margin-top: 15px;
+  text-align: center;
+  margin-left: 3.5px;
+}
+
+.scroll-arrow {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
