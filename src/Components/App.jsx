@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ScrollIndicator from './ScrollIndicator';
 import Footer from './Footer';
 import '../styles/Index.css'; // 상대경로 수정 주의
@@ -10,7 +10,7 @@ import Page from '../Menu/Page';
 import Reel from '../Menu/Reel';
 import Scene from '../Menu/Scene';
 import Inside from '../Menu/Inside';
-import Versus from '..//Menu/Versus';
+import Versus from '../Menu/Versus';
 import Archive from '../Menu/Archive';
 
 function App() {
